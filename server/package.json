@@ -2,9 +2,10 @@
   "name": "task-calendar-server",
   "version": "1.0.0",
   "description": "Task Calendar challenge back-end",
-  "main": "index.js",
+  "main": "./api/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "nodemon ./api/server.js"
   },
   "author": "Joao Marco Matta",
   "license": "MIT",
