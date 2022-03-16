@@ -15,7 +15,8 @@ module.exports = {
       },
       description: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: true,
+        defaultValue: ""
       },
       startDate: {
         type: Sequelize.DATE,

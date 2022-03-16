@@ -13,7 +13,8 @@ const Attributes = {
   },
   description: {
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: true,
+    defaultValue: ""
   },
   startDate: {
     type: DataTypes.DATE,
