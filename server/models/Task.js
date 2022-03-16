@@ -30,7 +30,7 @@ module.exports = (sequelize) => {
     'Task',
     Attributes,
     {
-      underscored: true,
+      underscored: false,
       timestamps: false,
       tableName: 'Tasks',
     },
