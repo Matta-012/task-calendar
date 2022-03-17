@@ -28,12 +28,14 @@ function SelectedTaskCard() {
 
   // Delete task from DB and update taskList
   const handleDeleteBtn = async () => {
-    const response = await axios.delete(`${BASE_URL}/${id}`);
+    try {
+      await axios.delete(`${BASE_URL}/${id}`);
 
-    if (response.status === 204) {
       const updatedTaskList = taskList.filter((task) => task.id !== id);
       setTaskList(updatedTaskList);
       setSelectedTask({});
+    } catch (error) {
+      console.log(error);
     }
   };
 
