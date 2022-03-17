@@ -1,7 +1,20 @@
 const { Task } = require('../models');
+const { Op } = require('sequelize');
 
 const getAll = async (_req, res) => {
   const taskList = await Task.findAll();
+
+  return res.status(200).json(taskList);
+};
+
+const getByQuery = async (req, res) => {
+  const { q } = req.query;
+
+  const taskList = await Task.findAll({
+    where: {
+      title: { [Op.like]: `%${q}%` },
+    }
+  });
 
   return res.status(200).json(taskList);
 };
@@ -36,6 +49,7 @@ const deleteTask = async (req, res) => {
 
 module.exports = {
   getAll,
+  getByQuery,
   create,
   update,
   deleteTask,

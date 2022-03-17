@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get('/', taskController.getAll);
 
+router.get('/search', taskController.getByQuery);
+
 router.post(
   '/',
   validateTaskData,
