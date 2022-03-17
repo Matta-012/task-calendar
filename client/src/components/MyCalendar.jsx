@@ -19,7 +19,7 @@ function MyCalendar() {
   };
 
   return (
-    <div className="">
+    <div className="h-95%">
       <FullCalendar
         locales={ [ptBrLocale] }
         headerToolbar={{
@@ -30,6 +30,7 @@ function MyCalendar() {
         plugins={ [dayGridPlugin, timeGridPlugin, interactionPlugin] }
         events={ taskList }
         eventClick={ (e) => handleTaskClick(e) }
+        height={'100%'}
       />
     </div>
   );

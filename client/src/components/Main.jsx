@@ -18,7 +18,7 @@ function Main() {
         <section id="searchbar" className="w-2/4">
           <SearchForm />
         </section>
-        <section id="calendar">
+        <section id="calendar" className="p-4 w-full h-full">
           <MyCalendar />
         </section>
       </main>
