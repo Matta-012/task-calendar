@@ -7,8 +7,8 @@ const fetchAPI = async (url) => {
     const data = response.data.map(({ id, title, description, startDate, endDate }) => ({
       id,
       title,
-      start: startDate,
-      end: endDate,
+      start: new Date(startDate),
+      end: new Date(endDate),
       extendedProps: {
         description
       }
