@@ -27,20 +27,20 @@ function SearchForm() {
   };
 
   return (
-    <div className="w-full max-w-xs">
+    <div className="w-full">
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        className="bg-white shadow-md rounded px-8 py-4 mb-4"
         onSubmit={ handleSearchSubmit }
       >
         <div className="mb-4">
           <label
-            className="block text-gray-700 text-sm font-bold mb-2"
+            className="block text-gray-700 font-bold mb-2"
             htmlFor="searchbar"
           >
             Pesquisar tarefa
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight outline-4 outline-blue-400"
             id="searchbar"
             type="text"
             placeholder="Pesquisar tarefa por título..."
@@ -48,21 +48,26 @@ function SearchForm() {
             onChange={(e) => setSearchTerm(e.target.value)}
             required
           />
-          <button
-            className="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
-            disabled={ isSearchBtnDisabled }
-          >
-            Pesquisar
-          </button>
-          <button
-            className="bg-red-500 disabled:bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-            disabled={ isSearchBtnDisabled }
-            onClick={ handleCancelSearch }
-          >
-            Cancelar pesquisa
-          </button>
+          <div className="pt-4 flex justify-between">
+            <div className="">
+              <button
+                className="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+                disabled={ isSearchBtnDisabled }
+              >
+                Pesquisar
+              </button>
+            </div>
+            <div>
+              <button
+                className="bg-red-500 disabled:bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+                onClick={ handleCancelSearch }
+              >
+                Cancelar pesquisa
+              </button>
+            </div>
+          </div>
         </div>
       </form>
     </div>

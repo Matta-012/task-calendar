@@ -53,48 +53,48 @@ function SelectedTaskCard() {
     <div className="bg-white shadow-md rounded px-8 py-2">
       <div>
         <h3 
-          className="block text-gray-700 font-bold"
+          className="block text-lg text-gray-900 font-bold"
         >
           Título da tarefa:
         </h3>
         <p
-          className="block text-gray-900 font-bold"
+          className="block text-gray-700 font-bold"
         >
           {title}
         </p>
         {description && (
           <>
             <h3 
-              className="block text-gray-700 font-bold"
+              className="block text-lg text-gray-900 font-bold"
             >
               Descrição da tarefa:
             </h3>
             <p
-              className="block text-gray-900 font-bold"
+              className="inline-block text-gray-700 font-bold"
             >
               {description}
             </p>
           </>
         )}
         <h3 
-          className="block text-gray-700 font-bold"
+          className="block text-lg text-gray-900 font-bold"
         >
           Data e Hora de Início:
         </h3>
         <p
-          className="block text-gray-900 font-bold"
+          className="block text-gray-700 font-bold"
         >
           {start.toLocaleString("pt-br")}
         </p>
         {end && (
           <>
             <h3
-              className="block text-gray-700 font-bold"
+              className="block text-lg text-gray-900 font-bold"
             >
               Data e Hora de Término:
             </h3>
             <p
-              className="block text-gray-900 font-bold"
+              className="block text-gray-700 font-bold"
             >
               {end.toLocaleString("pt-br")}
             </p>

@@ -101,7 +101,7 @@ function TaskForm() {
             Título:
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight outline-4 outline-blue-400"
             id="title"
             type="text"
             placeholder="Título da tarefa..."
@@ -118,7 +118,7 @@ function TaskForm() {
             Descrição:
           </label>
           <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight outline-4 outline-blue-400"
             id="description"
             placeholder="Descrição da tarefa"
             rows="5"
