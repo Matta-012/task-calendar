@@ -1,7 +1,9 @@
-import React, { useContext } from "react";
-import AppContext from "../context/AppContext";
-import FormButton from "./FormButton";
-import DatePickerInput from "./DatePickerInput";
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
+import FormButton from './FormButton';
+import DatePickerInput from './DatePickerInput';
+import postAPI from '../utils/postAPI';
+import { BASE_URL } from '../utils/fetchURLs';
 
 function EventForm() {
   const {
@@ -14,18 +16,32 @@ function EventForm() {
     setEndDate,
     setTitle,
     setDescription,
+    setTaskList,
+    taskList,
   } = useContext(AppContext);
 
-  // const createEvent = () => {
-  //   const newEvent = {
-  //     id: eventList.length + 1,
-  //     title,
-  //     start: startDate,
-  //     end: endDate,
-  //     extendedProps: {
-  //       description: description || "",
-  //     },
-  //   };
+  const createNewTask = async (e) => {
+    e.preventDefault();
+
+    const newTask = {
+      title,
+      description,
+      startDate,
+      endDate,
+    };
+
+    const response = await postAPI(BASE_URL, newTask);
+    
+    if (response.status === 201) {
+      const newTaskList = [...taskList, response.result];
+      setTaskList(newTaskList);
+    }
+  };
+
+  // const createTask = () => {
+    
+
+
 
   //   const newEventList = [...eventList, newEvent];
 
@@ -50,7 +66,7 @@ function EventForm() {
     <div className="w-full max-w-xs">
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-        // onSubmit={handleSubmit}
+        onSubmit={createNewTask}
       >
         <div className="mb-4">
           <label

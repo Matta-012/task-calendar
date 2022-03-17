@@ -43,6 +43,7 @@ export default function AppProvider({ children }) {
         setEndDate,
         setTitle,
         setDescription,
+        setTaskList,
       }}
     >
       {children}
