@@ -1,11 +1,11 @@
-const createTaskObj = (payload) => {
+const createTaskObj = (event) => {
   return {
-    id: payload.id,
-    title: payload.title,
-    start: new Date(payload.startDate),
-    end: new Date(payload.endDate),
+    id: event.id,
+    title: event.title,
+    start: new Date(event.startDate),
+    end: new Date(event.endDate),
     extendedProps: {
-      description: payload.description,
+      description: event.description,
     }
   };
 };
