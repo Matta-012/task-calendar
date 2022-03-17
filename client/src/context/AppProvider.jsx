@@ -40,6 +40,7 @@ export default function AppProvider({ children }) {
         title,
         description,
         isAddBtnDisabled,
+        selectedTask,
         setStartDate,
         setEndDate,
         setTitle,

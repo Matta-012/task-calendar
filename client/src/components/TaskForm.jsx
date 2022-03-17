@@ -5,7 +5,7 @@ import DatePickerInput from './DatePickerInput';
 import postAPI from '../utils/postAPI';
 import { BASE_URL } from '../utils/fetchURLs';
 
-function EventForm() {
+function TaskForm() {
   const {
     startDate,
     endDate,
@@ -133,4 +133,4 @@ function EventForm() {
   );
 }
 
-export default EventForm;
+export default TaskForm;
