@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import AppContext from "./AppContext";
-import PropTypes from "prop-types";
-import fetchAPI from "../utils/fetchAPI";
-import { BASE_URL } from "../utils/fetchURLs";
+import React, { useEffect, useState } from 'react';
+import AppContext from './AppContext';
+import PropTypes from 'prop-types';
+import fetchAPI from '../utils/fetchAPI';
+import { BASE_URL } from '../utils/fetchURLs';
 
 export default function AppProvider({ children }) {
   const [taskList, setTaskList] = useState([]);
@@ -13,6 +13,9 @@ export default function AppProvider({ children }) {
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(true);
   const [selectedTask, setSelectedTask] = useState({});
   const [isEditingTask, setIsEditingTask] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isSearchBtnDisabled, setIsSearchBtnDisabled] = useState(true);
+
 
   // Fetch data from DB on component mount
   useEffect(() => {
@@ -32,6 +35,13 @@ export default function AppProvider({ children }) {
     setIsAddBtnDisabled(!isTitleValid);
   }, [title]);
 
+  // Check if searchTerm is not empty to enable/disable search task button
+  useEffect(() => {
+    const isSearchTermValid = searchTerm.length > 0;
+
+    setIsSearchBtnDisabled(!isSearchTermValid);
+  }, [searchTerm]);
+
   return (
     <AppContext.Provider
       value={{
@@ -43,6 +53,8 @@ export default function AppProvider({ children }) {
         isAddBtnDisabled,
         selectedTask,
         isEditingTask,
+        searchTerm,
+        isSearchBtnDisabled,
         setStartDate,
         setEndDate,
         setTitle,
@@ -50,6 +62,7 @@ export default function AppProvider({ children }) {
         setTaskList,
         setSelectedTask,
         setIsEditingTask,
+        setSearchTerm,
       }}
     >
       {children}

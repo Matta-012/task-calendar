@@ -24,11 +24,13 @@ function TaskForm() {
     setIsEditingTask,
     selectedTask,
     setSelectedTask,
+    setSearchTerm,
   } = useContext(AppContext);
 
   const resetFormInputs = () => {
     setTitle('');
     setDescription('');
+    setSearchTerm('');
   };
 
   const createNewTask = async (e) => {
@@ -53,8 +55,6 @@ function TaskForm() {
 
     if (updatedList.status === 200) {
       setTaskList(updatedList.data);
-    } else {
-      console.log(`Error ${updatedList.status}`);
     }
   };
 
@@ -120,7 +120,7 @@ function TaskForm() {
           <textarea
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
             id="description"
-            placeholder="Descrição do evento"
+            placeholder="Descrição da tarefa"
             rows="5"
             value={ description }
             onChange={ (e) => setDescription(e.target.value) }
