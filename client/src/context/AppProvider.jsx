@@ -11,6 +11,7 @@ export default function AppProvider({ children }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(true);
+  const [selectedTask, setSelectedTask] = useState({});
 
   // Fetch data from DB on component mount
   useEffect(() => {
@@ -44,6 +45,7 @@ export default function AppProvider({ children }) {
         setTitle,
         setDescription,
         setTaskList,
+        setSelectedTask
       }}
     >
       {children}
