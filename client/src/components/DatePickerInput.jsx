@@ -8,9 +8,10 @@ registerLocale('ptBR', ptBR);
 
 function DatePickerInput({ displayDate, handleChange, text }) {
   return (
-    <div className="mb-6">
-      <p className="block text-gray-700 text-sm font-bold mb-2">{ text }</p>
+    <div className="mb-6 w-40">
+      <p className="block text-gray-700 font-bold mb-2">{ text }</p>
       <DatePicker
+        className="w-full"
         selected={ displayDate || new Date() }
         onChange={ (date) => handleChange(date) }
         showTimeSelect
