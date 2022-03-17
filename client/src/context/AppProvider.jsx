@@ -8,10 +8,11 @@ export default function AppProvider({ children }) {
   const [taskList, setTaskList] = useState([]);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
   const [isAddBtnDisabled, setIsAddBtnDisabled] = useState(true);
   const [selectedTask, setSelectedTask] = useState({});
+  const [isEditingTask, setIsEditingTask] = useState(false);
 
   // Fetch data from DB on component mount
   useEffect(() => {
@@ -41,12 +42,14 @@ export default function AppProvider({ children }) {
         description,
         isAddBtnDisabled,
         selectedTask,
+        isEditingTask,
         setStartDate,
         setEndDate,
         setTitle,
         setDescription,
         setTaskList,
-        setSelectedTask
+        setSelectedTask,
+        setIsEditingTask,
       }}
     >
       {children}

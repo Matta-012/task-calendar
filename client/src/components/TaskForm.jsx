@@ -3,6 +3,8 @@ import AppContext from '../context/AppContext';
 import FormButton from './FormButton';
 import DatePickerInput from './DatePickerInput';
 import postAPI from '../utils/postAPI';
+import putAPI from '../utils/putAPI';
+import fetchAPI from '../utils/fetchAPI';
 import { BASE_URL } from '../utils/fetchURLs';
 
 function TaskForm() {
@@ -18,6 +20,10 @@ function TaskForm() {
     setDescription,
     setTaskList,
     taskList,
+    isEditingTask,
+    setIsEditingTask,
+    selectedTask,
+    setSelectedTask,
   } = useContext(AppContext);
 
   const resetFormInputs = () => {
@@ -26,8 +32,6 @@ function TaskForm() {
   };
 
   const createNewTask = async (e) => {
-    e.preventDefault();
-
     const newTask = {
       title,
       description,
@@ -44,26 +48,50 @@ function TaskForm() {
     }
   };
 
-  // const createTask = () => {
+  const updateTaskList = async () => {
+    const updatedList = await fetchAPI(BASE_URL);
 
-  //   setIsEditingEvent(false);
-  // };
+    if (updatedList.status === 200) {
+      setTaskList(updatedList.data);
+    } else {
+      console.log(`Error ${updatedList.status}`);
+    }
+  };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const updateSelectedTask = async () => {
+    const { id } = selectedTask;
+    const updatedTask = {
+      title,
+      description,
+      startDate,
+      endDate,
+    };
 
-  //   if (isEditingEvent) {
-  //     updateEvent();
-  //   } else {
-  //     createEvent();
-  //   }
-  // };
+    const response = await putAPI(`${BASE_URL}/${id}`, updatedTask);
+
+    if (response.status === 200) {
+      await updateTaskList();
+      resetFormInputs();
+      setSelectedTask({});
+    }
+    setIsEditingTask(false);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (isEditingTask) {
+      await updateSelectedTask();
+    } else {
+      await createNewTask();
+    }
+  };
 
   return (
     <div className="w-full max-w-xs">
       <form
         className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-        onSubmit={createNewTask}
+        onSubmit={ handleSubmit }
       >
         <div className="mb-4">
           <label
@@ -77,8 +105,8 @@ function TaskForm() {
             id="title"
             type="text"
             placeholder="Título da tarefa..."
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={ title }
+            onChange={ (e) => setTitle(e.target.value) }
             required
           />
         </div>
@@ -94,8 +122,8 @@ function TaskForm() {
             id="description"
             placeholder="Descrição do evento"
             rows="5"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            value={ description }
+            onChange={ (e) => setDescription(e.target.value) }
           />
         </div>
         <DatePickerInput
@@ -109,24 +137,19 @@ function TaskForm() {
           displayDate={ endDate }
         />
         <div className="">
-          <FormButton
-            classes="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            isBtnDisabled={isAddBtnDisabled}
-            btnText="Adicionar evento"
-          />
-          {/* {!isEditingEvent ? (
+          {!isEditingTask ? (
             <FormButton
               classes="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               isBtnDisabled={isAddBtnDisabled}
-              btnText="Adicionar evento"
+              btnText="Adicionar tarefa"
             />
           ) : (
             <FormButton
               classes="bg-green-500 disabled:bg-green-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               isBtnDisabled={isAddBtnDisabled}
-              btnText="Editar evento selecionado"
+              btnText="Editar tarefa selecionada"
             />
-          )} */}
+          )}
         </div>
       </form>
     </div>
