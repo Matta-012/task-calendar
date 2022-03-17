@@ -10,6 +10,7 @@ export default function AppProvider({ children }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetchAPI(BASE_URL);
+
       setTaskList(response.data);
     };
 
