@@ -50,38 +50,72 @@ function SelectedTaskCard() {
   };
 
   return (
-    <div>
+    <div className="bg-white shadow-md rounded px-8 py-2">
       <div>
-        <h3>Título da tarefa</h3>
-        <p>{title}</p>
+        <h3 
+          className="block text-gray-700 font-bold"
+        >
+          Título da tarefa:
+        </h3>
+        <p
+          className="block text-gray-900 font-bold"
+        >
+          {title}
+        </p>
         {description && (
           <>
-            <h3>Descrição da tarefa</h3>
-            <p>{description}</p>
+            <h3 
+              className="block text-gray-700 font-bold"
+            >
+              Descrição da tarefa:
+            </h3>
+            <p
+              className="block text-gray-900 font-bold"
+            >
+              {description}
+            </p>
           </>
         )}
-        <h3>Data e Hora de Início</h3>
-        <p>{start.toLocaleString("pt-br")}</p>
+        <h3 
+          className="block text-gray-700 font-bold"
+        >
+          Data e Hora de Início:
+        </h3>
+        <p
+          className="block text-gray-900 font-bold"
+        >
+          {start.toLocaleString("pt-br")}
+        </p>
         {end && (
           <>
-            <h3>Data e Hora de Término</h3>
-            <p>{end.toLocaleString("pt-br")}</p>
+            <h3
+              className="block text-gray-700 font-bold"
+            >
+              Data e Hora de Término:
+            </h3>
+            <p
+              className="block text-gray-900 font-bold"
+            >
+              {end.toLocaleString("pt-br")}
+            </p>
           </>
         )}
       </div>
-      <button
-        type="button"
-        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={ handleEditTask }
-      >
-        Editar tarefa
-      </button>
-      <button
-        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-        onClick={ handleDeleteBtn }
-      >
-        Deletar tarefa
-      </button>
+      <div className="flex justify-between py-4">
+        <button
+          type="button"
+          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          onClick={ handleEditTask }
+        >
+          Editar tarefa
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          onClick={ handleDeleteBtn }
+        >
+          Deletar tarefa
+        </button>
+      </div>
     </div>
   );
 }

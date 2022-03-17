@@ -9,18 +9,20 @@ function Main() {
   const { selectedTask } = useContext(AppContext);
 
   return (
-    <main className="flex">
-      <section id="searchbar">
-        <SearchForm />
-      </section>
-      <section id="options" className="flex flex-col">
+    <div className="flex py-4 mx-4">
+      <section id="options" className="h-screen flex flex-col 2xl:justify-around">
         <TaskForm />
         { selectedTask.title && <SelectedTaskCard /> }
       </section>
-      <section id="calendar">
-        <MyCalendar />
-      </section>
-    </main>
+      <main className="w-full flex flex-col items-center">
+        <section id="searchbar" className="w-2/4">
+          <SearchForm />
+        </section>
+        <section id="calendar">
+          <MyCalendar />
+        </section>
+      </main>
+    </div>
   );
 }
 
