@@ -20,6 +20,11 @@ function EventForm() {
     taskList,
   } = useContext(AppContext);
 
+  const resetFormInputs = () => {
+    setTitle('');
+    setDescription('');
+  };
+
   const createNewTask = async (e) => {
     e.preventDefault();
 
@@ -35,21 +40,13 @@ function EventForm() {
     if (response.status === 201) {
       const newTaskList = [...taskList, response.result];
       setTaskList(newTaskList);
+      resetFormInputs();
     }
   };
 
   // const createTask = () => {
-    
 
-
-
-  //   const newEventList = [...eventList, newEvent];
-
-  //   setEventList(newEventList);
   //   setIsEditingEvent(false);
-  //   setSelectedEvent({});
-  //   setTitle('');
-  //   setDescription('');
   // };
 
   // const handleSubmit = (e) => {
