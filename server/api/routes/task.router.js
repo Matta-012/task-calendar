@@ -12,6 +12,13 @@ router.post(
   taskController.create
 );
 
+router.put(
+  '/:id',
+  validateTaskData,
+  validateTaskExistence,
+  taskController.update
+);
+
 router.delete(
   '/:id',
   validateTaskExistence,

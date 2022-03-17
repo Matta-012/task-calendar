@@ -13,9 +13,17 @@ const create = async (req, res) => {
 };
 
 const update = async (req, res) => {
-  const taskList = await Task.findAll();
+  const { id } = req.params;
+  const { taskData } = req;
+  
+  await Task.update({ ...taskData.dataValues, ...req.body }, { where: { id } });
 
-  return res.status(200).json(taskList);
+  const updatedResponse = {
+    ...taskData.dataValues,
+    ...req.body,
+  }
+
+  return res.status(200).json(updatedResponse);
 };
 
 const deleteTask = async (req, res) => {

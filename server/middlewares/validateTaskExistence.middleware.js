@@ -3,11 +3,12 @@ const { Task } = require('../models');
 module.exports = async (req, res, next) => {
   const { id } = req.params;
 
-  const isTaskFound = await Task.findByPk(id);
+  const findTask = await Task.findByPk(id);
 
-  if (!isTaskFound) {
+  if (!findTask) {
     return res.status(404).json({ message: 'Task not found!' });
   }
 
+  req.taskData = findTask;
   next();
 };
