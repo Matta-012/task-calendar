@@ -144,12 +144,14 @@ function TaskForm() {
               classes="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               isBtnDisabled={isAddBtnDisabled}
               btnText="Adicionar tarefa"
+              btnType="submit"
             />
           ) : (
             <FormButton
               classes="bg-green-500 disabled:bg-green-300 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               isBtnDisabled={isAddBtnDisabled}
               btnText="Editar tarefa selecionada"
+              btnType="submit"
             />
           )}
         </div>

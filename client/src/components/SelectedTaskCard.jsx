@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import axios from 'axios';
 import { BASE_URL } from '../utils/fetchURLs';
+import FormButton from './FormButton';
 
 function SelectedTaskCard() {
   const {
@@ -102,19 +103,18 @@ function SelectedTaskCard() {
         )}
       </div>
       <div className="flex justify-between py-4">
-        <button
-          type="button"
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onClick={ handleEditTask }
-        >
-          Editar tarefa
-        </button>
-        <button
-          className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          onClick={ handleDeleteBtn }
-        >
-          Deletar tarefa
-        </button>
+        <FormButton
+          classes="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          btnText="Editar tarefa"
+          btnType="button"
+          handleClick={ handleEditTask }
+        />
+        <FormButton
+          classes="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          btnText="Deletar tarefa"
+          btnType="button"
+          handleClick={ handleDeleteBtn }
+        />
       </div>
     </div>
   );

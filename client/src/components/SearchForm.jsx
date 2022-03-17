@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 import fetchAPI from '../utils/fetchAPI';
 import { BASE_URL } from '../utils/fetchURLs';
+import FormButton from './FormButton';
 
 function SearchForm() {
   const { isSearchBtnDisabled, searchTerm, setSearchTerm, setTaskList } = useContext(AppContext);
@@ -49,23 +50,21 @@ function SearchForm() {
             required
           />
           <div className="pt-4 flex justify-between">
-            <div className="">
-              <button
-                className="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-                disabled={ isSearchBtnDisabled }
-              >
-                Pesquisar
-              </button>
+            <div>
+              <FormButton
+                classes="bg-blue-500 disabled:bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                isBtnDisabled={ isSearchBtnDisabled }
+                btnText="Pesquisar"
+                btnType="submit"
+              />
             </div>
             <div>
-              <button
-                className="bg-red-500 disabled:bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
-                onClick={ handleCancelSearch }
-              >
-                Cancelar pesquisa
-              </button>
+              <FormButton
+                classes="bg-red-500 disabled:bg-red-300 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                btnText="Cancelar pesquisa"
+                btnType="button"
+                handleClick={ handleCancelSearch }
+              />
             </div>
           </div>
         </div>
