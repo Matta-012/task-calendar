@@ -309,7 +309,7 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             "message": "Task not found!"
           }
 
-## Author
+## Autor
 
 <table>
   <tr>
