@@ -15,30 +15,27 @@ services:
   api:
     container_name: task_calendar_api
     restart: unless-stopped
-    image: task-calendar-api
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: task-calendar-backend
+    build: ./server
     ports:
       - 3001:3001
     networks:
       - shared-network
     depends_on:
-      - db
+      - "db"
 
   client:
     container_name: task_calendar_client
     restart: unless-stopped
-    image: task-calendar-api
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: task-calendar-frontend
+    build: ./client
     ports:
       - 3000:3000
     networks:
       - shared-network
     depends_on:
-      - api
+      - "api"
 
 networks:
   shared-network:
+    driver: 'bridge'

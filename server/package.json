@@ -4,11 +4,11 @@
   "description": "Task Calendar challenge back-end",
   "main": "./api/server.js",
   "scripts": {
-    "prestart": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all $",
+    "prestart": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
     "start": "nodemon ./api/server.js",
-    "drop": "npx sequelize-cli db:drop $",
-    "seed": "npx sequelize-cli db:seed:all $",
-    "unseed": "npx sequelize-cli db:seed:undo $",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all",
+    "unseed": "npx sequelize-cli db:seed:undo",
     "test": "nyc --all --include controllers mocha tests/unit/**/*.js --exit"
   },
   "author": "Joao Marco Matta",

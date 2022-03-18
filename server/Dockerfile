@@ -1,6 +1,8 @@
 FROM node:14-alpine
 
-ENV NODE_ENV=api
+ENV HOSTNAME=db
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=password
 
 WORKDIR /usr/src/server
 
