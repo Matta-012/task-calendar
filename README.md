@@ -37,7 +37,7 @@
 
 ## 💻 Pré-requisitos
 
-Esta aplicação utiliza o [Docker](https://www.docker.com/) e o [Docker Compose](https://docs.docker.com/compose/install/) para iniciá-la, portanto certifique-se que ambas as ferramentas estão instaladas corretamente em seu computador.
+Esta aplicação utiliza o [Docker](https://www.docker.com/get-started/) e o [Docker Compose](https://docs.docker.com/compose/install/) para iniciá-la, portanto certifique-se que ambas as ferramentas estão instaladas corretamente em seu computador.
 
 ## 🚀 Clonando o projeto
 
