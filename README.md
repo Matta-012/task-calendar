@@ -69,6 +69,10 @@ Navegue até o diretório `server`:
 ```
 cd /server
 ```
+Instale as dependências:
+```
+npm install
+```
 Execute os testes:
 ```
 npm test
