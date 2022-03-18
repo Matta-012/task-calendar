@@ -80,7 +80,7 @@ Assim que a aplicação iniciar, automaticamente serão carregadas na tela algum
 #### Criando uma nova tarefa
 
 <div>
-  <img src='./images/criar-tarefa.png' />
+  <img src='./images/criar-tarefa.jpeg' />
 </div>
 
 Para criar uma tarefa, basta adicionar um título (obrigatório), uma descrição, a data e hora inicial (obrigatório), a data e hora de término e clicar no botão de adicionar tarefa.
@@ -98,7 +98,7 @@ Para editar uma tarefa, basta clicar em uma tarefa no calendário que uma nova j
 As informações da sua tarefa serão carregadas no formulário de alteração e, após fazer as alterações desejadas, basta clicar no botão `Editar tarefa selecionada`.
 
 <div>
-  <img src='./images/editar.png' />
+  <img src='./images/editar.jpeg' />
 </div>
 
 #### Pesquisando tarefas por título
