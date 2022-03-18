@@ -9,7 +9,7 @@
     "drop": "npx sequelize-cli db:drop $",
     "seed": "npx sequelize-cli db:seed:all $",
     "unseed": "npx sequelize-cli db:seed:undo $",
-    "test": "nyc --all --include models --include controllers mocha test/**/*.js --exit"
+    "test": "nyc --all --include controllers mocha tests/unit/**/*.js --exit"
   },
   "author": "Joao Marco Matta",
   "license": "MIT",
@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
     "mocha": "^9.2.2",
     "nodemon": "^2.0.15",
     "nyc": "^15.1.0",
