@@ -324,7 +324,7 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
   </tr>
 </table>
 
-## License
->You can check out the full license [here](https://github.com/Matta-012/store-manager/blob/main/LICENSE)
+## Licença
+>Você pode conferir todas as informações sobre a licença [aqui](https://github.com/Matta-012/store-manager/blob/main/LICENSE)
 
-This project is licensed under the terms of the **MIT** license.
+Este projeto está licenciado sob os termos da licença **MIT**.
