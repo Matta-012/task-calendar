@@ -61,6 +61,18 @@ Abra seu navegador do `Google Chrome` e digite o seguinte link:
 
 Aguarde até a aplicação iniciar.
 
+#### Testando a aplicação
+
+O back-end desta aplicação possui testes unitários dos controladores. **Para executá-los e checar a cobertura de testes, siga as seguintes instruções:**
+
+Navegue até o diretório `server`:
+```
+cd /server
+```
+Execute os testes:
+```
+npm test
+```
 ## Utilizando a Aplicação
 
 Assim que a aplicação iniciar, automaticamente serão carregadas na tela algumas tarefas já preenchidas previamente no banco de dados.
