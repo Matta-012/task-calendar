@@ -1,16 +1,12 @@
-# Task Calendar - Desafio Full stack [Diel Energia](https://dielenergia.com/)
+# Task Calendar
 
 <div>
   <img src='./images/task-calendar.png' />
 </div>
 
-> Task Calendar é uma aplicação full stack onde você pode criar, editar e deletar tarefas e acompanhá-las em um calendário.
+> Task Calendar is a full stack application where you can create, edit and delete tasks and keep track of them on a calendar.
 
->Esta aplicação foi desenvolvida como desafio técnico da Diel Energia para o cargo de Desenvolvedor Fullstack Junior.
-
->A [Diel Energia](https://dielenergia.com/) resolve problemas práticos de gestão da refrigeração, fazendo com que empresas deixem de pagar desnecessariamente por consumo de energia e manutenção excessivos. Com uma equipe multidisciplinar e muita tecnologia, a Diel está construindo a nova era da gestão de refrigeração e da indústria do frio.
-
-## 🛠️ Tecnologias e Ferramentas utilizadas
+## 🛠️ Technologies and Tools used
 #### Front-end
 * React
 * React Hooks
@@ -35,105 +31,106 @@
 * Nyc
 * Nodemon
 
-## 💻 Pré-requisitos
+## 💻 Prerequisites
 
-Esta aplicação utiliza o [Docker](https://www.docker.com/get-started/) e o [Docker Compose](https://docs.docker.com/compose/install/) para iniciá-la, portanto certifique-se que ambas as ferramentas estão instaladas corretamente em seu computador.
+This application uses [Docker](https://www.docker.com/get-started/) and [Docker Compose](https://docs.docker.com/compose/install/) to start it, so make sure that both tools are installed correctly on your computer.
 
-## 🚀 Clonando o projeto
+## 🚀 Cloning the Project
 
-Abra seu terminal e digite os seguintes comandos:
+
+Open your terminal and type the following commands:
 ```
 git clone https://github.com/Matta-012/task-calendar.git
 
 cd task-calendar
 ```
-## 🚀 Iniciando a Aplicação
-Com o projeto clonado em sua máquina e dentro do diretório `task-calendar`, execute o seguinte comando do docker compose:
+## 🚀 Starting the Application
+With the project cloned on your machine and inside the `task-calendar` directory, run the following docker compose command:
 
 ```
 docker-compose up
 ```
-Aguarde a instalação até que a mensagem `Conectado na porta 3001` apareça em seu terminal.
+Wait for the installation until the message `Connected on port 3001` appears in your terminal.
 
-Abra seu navegador do `Google Chrome` e digite o seguinte link:
+Open your `Google Chrome` browser and enter the following link:
 
 [http://localhost:3000/](http://localhost:3000/)
 
-Aguarde até a aplicação iniciar.
+Wait until the application starts.
 
-#### Testando a aplicação
+#### Testing the application
 
-O back-end desta aplicação possui testes unitários dos controladores. **Para executá-los e checar a cobertura de testes, siga as seguintes instruções:**
+The back-end of this application has unit tests for the Controllers. **To run them and check test coverage, follow these instructions:**
 
-Navegue até o diretório `server`:
+Navigate to the `server` directory
 ```
 cd /server
 ```
-Instale as dependências:
+Install dependencies:
 ```
 npm install
 ```
-Execute os testes:
+Start the tests
 ```
 npm test
 ```
-## Utilizando a Aplicação
+## Using the Application
 
-Assim que a aplicação iniciar, automaticamente serão carregadas na tela algumas tarefas já preenchidas previamente no banco de dados.
+As soon as the application starts, some tasks already filled in the database will automatically be loaded on the screen.
 
-#### Criando uma nova tarefa
+#### Creating a new task
 
 <div>
   <img src='./images/criar-tarefa.jpeg' />
 </div>
 
-Para criar uma tarefa, basta adicionar um título (obrigatório), uma descrição, a data e hora inicial (obrigatório), a data e hora de término e clicar no botão de adicionar tarefa.
+To create a task, simply add a title (required), a description, the start date and time (required), the end date and time, and click the add task button.
 
-#### Editando ou Deletando uma tarefa
+#### Editing or Deleting a Task
 
 <div>
   <img src='./images/editar-excluir-tarefa.png' />
 </div>
 
-Para deletar uma tarefa, basta clicar em uma tarefa no calendário que uma nova janela aparecerá em sua tela e depois basta clicar no botão `Deletar tarefa`.
+To delete a task, just click on a task in the calendar and a new window will appear on your screen and then just click on the `Delete Task` button.
 
-Para editar uma tarefa, basta clicar em uma tarefa no calendário que uma nova janela aparecerá em sua tela e depois basta clicar no botão `Editar tarefa`.
+To edit a task, just click on a task in the calendar and a new window will appear on your screen and then just click on the `Edit Task` button.
 
-As informações da sua tarefa serão carregadas no formulário de alteração e, após fazer as alterações desejadas, basta clicar no botão `Editar tarefa selecionada`.
+Your task information will be loaded into the change form, and after making the desired changes, simply click on the `Edit selected task` button.
 
 <div>
   <img src='./images/editar.jpeg' />
 </div>
 
-#### Pesquisando tarefas por título
+#### Searching tasks by title
 
 <div>
   <img src='./images/pesquisar-tarefa.png' />
 </div>
 
-Para pesquisar por uma tarefa pelo seu título, faça uma busca no campo indicado com os termos desejados e clique no botão `Pesquisar`. Caso alguma tarefa seja encontrada, apenas as tarefas que possuem o termo pesquisado em seu título serão exibidas no calendário.
+To search for a task by its title, search in the field indicated with the desired terms and click on the `Search` button. If any tasks are found, only tasks that have the search term in their title will be displayed in the calendar.
 
-Para cancelar a pesquisa, clique no botão `Cancelar pesquisa` para que todas as tarefas sejam atualizadas e listadas novamento no calendário.
+To cancel the search, click the `Cancel Search` button so that all tasks are updated and re-listed in the calendar
 
-## Endpoints da API
-Esta API possui os seguintes endpoint:
+## API Endpoints
+This API has the following endpoints:
 
 | Method | Description |
 |---|---|
-| `GET - localhost:3001/tasks` | Retorna todas as tarefas cadastradas no Banco de Dados. |
-| `GET - localhost:3001/tasks/search` | Retorna todas as tarefas que satisfaçam o termo pesquisado. |
-| `POST - localhost:3001/tasks` | Cria uma nova tarefa. |
-| `PUT - localhost:3001/tasks/:id` | Atualiza uma tarefa existente com novas informações. |
-| `DELETE - localhost:3001/tasks/:id` | Deleta uma tarefa. |
+| `GET - localhost:3001/tasks` | Returns all tasks registered in the Database. |
+| `GET - localhost:3001/tasks/search` | Returns all tasks that satisfy the search term. |
+| `POST - localhost:3001/tasks` | Create a new task. |
+| `PUT - localhost:3001/tasks/:id` | Updates an existing task with new information. |
+| `DELETE - localhost:3001/tasks/:id` | Deletes a task. |
 
-## Utilizando a API
-Os exemplos a seguir utilizam o [Isomnia](https://insomnia.rest/) para fazer as requisições, porém você pode utilizar outros meios, se preferir.
+## Using the API
+The following examples uses [Isomnia](https://insomnia.rest/) to make the requests, however you can use other tools, if you prefer.
 
-### Tarefas (`/tasks`)
-Possui todas as informações pertinentes às tarefas cadastradas no banco de dados.
+### Tasks (`/tasks`)
+It has all the information relevant to the tasks registered in the database.
 
-#### Listar todas as tarefas [GET `/tasks`]
-+ Resposta 200 OK (application/json)
+#### List all tasks [GET `/tasks`]
++ Response 200 OK (application/json)
 
           [
             {
@@ -159,14 +156,14 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             }
           ]
           
-#### Criar uma nova tarefa [POST `/tasks`]
-+ Atributos (object)
-  + title: título da tarefa (precisa ser uma string, campo obrigatório e o tamanho mínimo é de 3 caracteres)
-  + description: descrição da tarefa (precisa ser uma string)
-  + startDate: data e hora de início da tarefa (precisa ser uma data válida e não pode ser nula)
-  + endDate: data e hora de término da tarefa (precisa ser uma data, não é um campo obrigatório, não pode ser menor que a data inicial)
+#### Create a new task [POST `/tasks`]
++ Attributes (object)
+  + title: task title (must be a string, required field and minimum length is 3 characters)
+  + description: task description (must be a string)
+  + startDate: task start date and time (must be a valid date and cannot be null)
+  + endDate: task end date and time (must be a date, not a required field, cannot be less than the start date)
 
-+ Requisição (application/json)
++ Request (application/json)
   + Body
 
           {
@@ -176,7 +173,7 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             "endDate": "2022-03-18T14:30:00.000Z"
           }
           
-+ Resposta 201 Created (application/json)
++ Response 201 Created (application/json)
 
           {
             "id": 4,
@@ -186,44 +183,44 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             "endDate": "2022-03-18T14:30:00.000Z"
           }
           
-+ Resposta 400 Bad Request (application/json)
++ Response 400 Bad Request (application/json)
 
           {
             "message": "\"title\" is required"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"title\" must be a string"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"title\" must be at least 3 characters long"
           }
           
-+ Resposta 400 Bad Request (application/json)
++ Response 400 Bad Request (application/json)
 
           {
             "message": "\"startDate\" is required"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"startDate\" must be a valid date"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"endDate\" must be greater than start date"
           }
 
-#### Listar todos os produtos por parâmetro de pesquisa [GET `/tasks/search?q={testes}`]   
-+ Resposta 200 OK (application/json)
+#### List all products by search parameter [GET `/tasks/search?q={testes}`]   
++ Response 200 OK (application/json)
 
           [
             {
@@ -235,14 +232,14 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             }
           ]
 
-#### Atualizar uma tarefa [PUT `/tasks/{id}`]
-+ Atributos (object)
-  + title: título da tarefa (precisa ser uma string, campo obrigatório e o tamanho mínimo é de 3 caracteres)
-  + description: descrição da tarefa (precisa ser uma string)
-  + startDate: data e hora de início da tarefa (precisa ser uma data válida e não pode ser nula)
-  + endDate: data e hora de término da tarefa (precisa ser uma data, não é um campo obrigatório, não pode ser menor que a data inicial)
+#### Update a task [PUT `/tasks/{id}`]
++ Attributes (object)
+  + title: task title (must be a string, required field and minimum length is 3 characters)
+  + description: task description (must be a string)
+  + startDate: task start date and time (must be a valid date and cannot be null)
+  + endDate: task end date and time (must be a date, not a required field, cannot be less than the start date)
 
-+ Requisição (application/json)
++ Request (application/json)
   + Body
 
           {
@@ -262,58 +259,58 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
             "endDate": "2022-03-18T14:30:00.000Z"
           }
 
-+ Resposta 404 Not Found (application/json)
++ Response 404 Not Found (application/json)
 
           {
             "message": "Task not found!"
           }
 
-+ Resposta 400 Bad Request (application/json)
++ Response 400 Bad Request (application/json)
 
           {
             "message": "\"title\" is required"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"title\" must be a string"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"title\" must be at least 3 characters long"
           }
           
-+ Resposta 400 Bad Request (application/json)
++ Response 400 Bad Request (application/json)
 
           {
             "message": "\"startDate\" is required"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"startDate\" must be a valid date"
           }
           
-+ Resposta 422 Unprocessable Entity (application/json)
++ Response 422 Unprocessable Entity (application/json)
 
           {
             "message": "\"endDate\" must be greater than start date"
           }
 
-#### Deletar uma tarefa por ID [DELETE `/tasks/{id}`]   
-+ Resposta 204 No Content (application/json)
+#### Delete a task by ID [DELETE `/tasks/{id}`]   
++ Response 204 No Content (application/json)
 
-+ Resposta 404 Not Found (application/json)
++ Response 404 Not Found (application/json)
 
           {
             "message": "Task not found!"
           }
 
-## Autor
+## Author
 
 <table>
   <tr>
@@ -328,7 +325,7 @@ Possui todas as informações pertinentes às tarefas cadastradas no banco de da
   </tr>
 </table>
 
-## Licença
->Você pode conferir todas as informações sobre a licença [aqui](https://github.com/Matta-012/store-manager/blob/main/LICENSE)
+## License
+>You can check all the information about the license [here](https://github.com/Matta-012/store-manager/blob/main/LICENSE)
 
-Este projeto está licenciado sob os termos da licença **MIT**.
+This project is licensed under **MIT** terms.
